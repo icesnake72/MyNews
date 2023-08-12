@@ -1,6 +1,7 @@
 package com.example.mynews;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,8 +72,12 @@ public class NewsAdaptor extends RecyclerView.Adapter<NewsAdaptor.ViewHolder> {
                 @Override
                 public void onClick(View view) {
 
-                    Toast toast = Toast.makeText(view.getContext(), news_url, Toast.LENGTH_SHORT);
-                    toast.show();
+                    Intent intent = new Intent(view.getContext(), WebViewActivity.class);
+                    intent.putExtra("NEWS_URL", news_url);
+                    view.getContext().startActivity(intent);
+
+//                    Toast toast = Toast.makeText(view.getContext(), news_url, Toast.LENGTH_SHORT);
+//                    toast.show();
                 }
             });
         }
