@@ -1,5 +1,6 @@
 package com.example.mynews;
 
+
 public class NewsSource {
     private String name;
 
